@@ -1,2 +1,2 @@
 # nlp-map
-Visualization of the multilingual language models
+Languages of the recent multilingual LMs visualized on the map.
