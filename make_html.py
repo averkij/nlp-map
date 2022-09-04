@@ -36,4 +36,6 @@ fig.update_layout(showlegend=True)
 
 fig.write_html("index.html", include_plotlyjs="cdn")
 
+fig.show()
+
 # %%
