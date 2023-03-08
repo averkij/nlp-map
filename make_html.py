@@ -9,7 +9,8 @@ pio.templates.default = "seaborn"
 
 lang_df = pd.read_csv("./langs.csv")
 
-BG_COLOR = "#659dbd"
+# BG_COLOR = "#659dbd"
+BG_COLOR = "#ffffff"
 
 
 def create_figure():
@@ -38,7 +39,7 @@ def update_figure(fig, title):
             text=title,
             x=0.5,
             y=0.96,
-            font=dict(family="Josefin Sans", size=32, color="white"),
+            font=dict(family="Josefin Sans", size=32, color="#555555"),
         ),
         legend=dict(
             x=0.92,
@@ -54,19 +55,25 @@ def update_figure(fig, title):
 fig = create_figure()
 
 groups = {
-    "mT5": {"col": "mt5", "color": "blue", "marker": "arrow-down", "marker-size": 7},
-    "mGPT": {"col": "mgpt", "color": "red", "marker": "arrow-up", "marker-size": 7},
+    "mT5": {"col": "mt5", "color": "#636efa", "marker": "arrow-down", "marker-size": 5},
+    "mGPT": {"col": "mgpt", "color": "#ef553b", "marker": "arrow-up", "marker-size": 5},
     "BLOOM": {
         "col": "bloom",
-        "color": "green",
+        "color": "#00cc96",
         "marker": "arrow-left",
         "marker-size": 5,
     },
-    "XGLM": {
-        "col": "xglm",
-        "color": "orange",
+    # "XGLM": {
+    #     "col": "xglm",
+    #     "color": "orange",
+    #     "marker": "arrow-right",
+    #     "marker-size": 7,
+    # },
+    "LLaMA": {
+        "col": "llama",
+        "color": "#feb236",
         "marker": "arrow-right",
-        "marker-size": 7,
+        "marker-size": 5,
     },
 }
 
@@ -82,7 +89,8 @@ for i, (name, val) in enumerate(groups.items()):
             mode="markers",
             marker=dict(
                 size=7,
-                color=colors[i % 10],
+                # color=colors[i % 10],
+                color=val["color"],
                 symbol=val["marker"],
             ),
             visible=True,
